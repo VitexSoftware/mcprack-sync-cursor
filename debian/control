@@ -1,0 +1,26 @@
+Source: mcprack-sync-cursor
+Section: utils
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-setuptools,
+ python3-mcprack-client,
+Standards-Version: 4.7.0
+Homepage: https://github.com/VitexSoftware/mcprack-sync-cursor
+Vcs-Git: https://github.com/VitexSoftware/mcprack-sync-cursor.git
+Vcs-Browser: https://github.com/VitexSoftware/mcprack-sync-cursor
+Rules-Requires-Root: no
+
+Package: mcprack-sync-cursor
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ python3-mcprack-client,
+Description: keep Cursor IDE MCP config in sync with mcprack
+ Fetches the user's selected MCP servers from a mcprack instance and merges
+ them into Cursor's mcp.json. Includes an optional systemd user timer.
